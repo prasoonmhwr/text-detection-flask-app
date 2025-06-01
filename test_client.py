@@ -59,7 +59,7 @@ def test_api():
     print(json.dumps(model_info, indent=2))
     
     print("\n=== Single Prediction ===")
-    prediction = client.predict(f"The dusty lanes of Jaipur shimmered under the afternoon sun. Eight-year-old Leela clutched her worn doll, its fabric faded but its smile unwavering. Her grandmother, Dadi, sat weaving intricate patterns on a small loom, the rhythmic click-clack a familiar lullaby.Dadi, Leela whispered, will the monsoon ever come? Dadi smiled, her eyes crinkling at the corners. The earth whispers, child. Soon, the clouds will gather, and the peacocks will dance.Just then, a faint rumble echoed from the west. Leela's eyes widened. A cool breeze, carrying the scent of distant rain, stirred the dust. Hope, as vibrant as Dadi's threads, bloomed in Leela's heart.")
+    prediction = client.predict(f"In recent years, the rapid advancement of artificial intelligence has transformed numerous industries, from healthcare to finance. Machine learning algorithms now play a critical role in automating tasks, analyzing vast datasets, and providing predictive insights. However, with great power comes great responsibility, and ethical considerations surrounding data privacy, algorithmic bias, and transparency have become more important than ever. As AI continues to evolve, striking a balance between innovation and accountability remains a key challenge for researchers and practitioners alike.")
     print(json.dumps(prediction, indent=2))
     
     print("\n=== Batch Prediction ===")
@@ -67,7 +67,7 @@ def test_api():
         "This is amazing!",
         "I hate this product.",
         "This is a sample text to check if it was written by a human or AI",
-        "I want to start my youtube channel what is the process for it. thsis sia as fjfs fjskkf sksksks asda sd asd asd asd as da sda sda sda sd asdasdasd asd asd asd  Also provide the resources required for it."
+        "I want to start my youtube channel what is the process for it. Also provide the resources required for it."
     ]
     batch_result = client.batch_predict(texts)
     print(json.dumps(batch_result, indent=2))

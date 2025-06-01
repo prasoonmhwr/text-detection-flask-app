@@ -150,9 +150,9 @@ class ModelManager:
             inputs = self.tokenizer(
                 text,
                 add_special_tokens=True,
-                # max_length=256,  # Model-specific max length
-                # padding='max_length',
-                truncation=True,
+                max_length=260,  
+                padding='max_length',
+                # truncation=True,
                 return_tensors='pt'
             ).to(Config.DEVICE)
             
@@ -198,7 +198,7 @@ class ModelManager:
                 'ai_probability': round(float(ai_probability), 4),
                 'human_probability': round(float(human_probability), 4),
                 'inference_time': round(inference_time, 4),
-                'model_name': Config.MODEL_NAME
+                # 'model_name': Config.MODEL_NAME
             }
             
         except Exception as e:
@@ -351,6 +351,7 @@ def batch_predict():
         })
         
     except BadRequest as e:
+        print("____________",e)
         return jsonify({
             'success': False,
             'error': str(e)
