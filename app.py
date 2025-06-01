@@ -150,7 +150,7 @@ class ModelManager:
             inputs = self.tokenizer(
                 text,
                 add_special_tokens=True,
-                max_length=260,  
+                max_length=258,  
                 padding='max_length',
                 # truncation=True,
                 return_tensors='pt'
