@@ -90,45 +90,7 @@ class ModelManager:
             logger.error(f"Failed to load model: {str(e)}")
             raise
 
-    # def predict(self, text: str) -> Dict[str, Any]:
-    #     """Make prediction on input text"""
-    #     if not self.pipeline:
-    #         raise RuntimeError("Model not loaded")
-        
-    #     try:
-    #         # Validate input
-    #         if not text or len(text.strip()) == 0:
-    #             raise ValueError("Empty text provided")
-            
-    #         if len(text) > Config.MAX_LENGTH * 4:  # Rough character limit
-    #             raise ValueError(f"Text too long. Maximum length: {Config.MAX_LENGTH * 4} characters")
-            
-    #         # Make prediction
-    #         start_time = time.time()
-            
-    #         results = self.pipeline(text)
-    #         inference_time = time.time() - start_time
-            
-    #         # Format results
-    #         predictions = []
-    #         for result in results[0]:  # Pipeline returns list of lists
-    #             predictions.append({
-    #                 'label': result['label'],
-    #                 'confidence': round(result['score'], 4)
-    #             })
-            
-    #         # Sort by confidence
-    #         predictions.sort(key=lambda x: x['confidence'], reverse=True)
-            
-    #         return {
-    #             'predictions': predictions,
-    #             'inference_time': round(inference_time, 4),
-    #             'model_name': Config.MODEL_NAME
-    #         }
-            
-    #     except Exception as e:
-    #         logger.error(f"Prediction error: {str(e)}")
-    #         raise
+    
     def predict(self, text: str) -> Dict[str, Any]:
         """Make prediction on input text for AI detection"""
         if not self.model:
